@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Website - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #2c3e50;
+            padding: 15px 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+        }
+
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .hamburger:hover {
+            background-color: #555555;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            display: block;
+        }
+
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 50px;
+            left: 20px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            display: none;
+            min-width: 200px;
+            z-index: 999;
+        }
+
+        .dropdown.active {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 15px 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid #eee;
+            font-weight: 500;
+            color: #333;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        /* Main Content */
+        .container {
+            margin-top: 80px;
+            padding: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Home Page */
+        .home-page h1 {
+            color: #2c3e50;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        .home-page p {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            text-align: justify;
+            line-height: 1.8;
+        }
+
+        .home-page h2 {
+            color: #2c3e50;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-size: 1.8em;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleDropdown()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="boeing.html">Boeing</a>
+            <a class="dropdown-item" href="lockheedmartin.html">Lockheed Martin</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="home-page">
+            <h1>Aviation Companies</h1>
+            <p>Welcome to my website about differnt aviation companies.</p>
+
+            <h2>The Evolution of Aviation</h2>
+            <p>Aviation has come a long way since the Wright Brothers' first flight in 1903. What began as a daring experiment with the Wright Flyer has evolved into one of the most sophisticated industries in the world, transforming global commerce, communication, and transportation.</p>
+
+            <h2>Early Aviation Era (1903-1930s)</h2>
+            <p>The pioneering days of aviation were marked by rapid innovation and daring aviators. The first aircraft were simple wood and fabric constructions, barely able to stay airborne. However, the potential was immediately recognized, and governments and private investors began funding aviation research and development. By the 1920s, the first commercial airlines were established, carrying mail and eventually passengers across continents.</p>
+
+            <h2>The Golden Age (1930s-1960s)</h2>
+            <p>The introduction of all-metal aircraft and more powerful engines revolutionized aviation. The Douglas DC-3, introduced in 1935, became one of the most successful aircraft in history. During World War II, aviation technology advanced rapidly, with both military and civilian aircraft becoming more sophisticated. After the war, the jet engine transformed aviation forever, leading to faster, more reliable commercial aircraft that could transport larger numbers of passengers.</p>
+
+            <h2>The Modern Era (1960s-Present)</h2>
+            <p>Modern aviation has become incredibly sophisticated, with aircraft capable of carrying hundreds of passengers across continents. The introduction of the Boeing 747 in 1970 changed long-distance travel forever with its twin-deck design and increased capacity. Today, companies like Boeing and Lockheed Martin continue to push the boundaries of aviation technology, producing both commercial aircraft and advanced military platforms. The industry now focuses on sustainability, fuel efficiency, and advanced materials to meet the challenges of the 21st century.</p>
+
+            <h2>The Future of Aviation</h2>
+            <p>As we look forward, the aviation industry is exploring new frontiers such as electric aircraft, autonomous flight systems, and sustainable aviation fuels. Leading companies are investing heavily in research and development to make aviation safer, more efficient, and more environmentally friendly for future generations.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() {
+            const dropdown = document.getElementById('dropdown');
+            dropdown.classList.toggle('active');
+        }
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', function(event) {
+            const navbar = document.querySelector('.navbar');
+            const dropdown = document.getElementById('dropdown');
+
+            if (!navbar.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
