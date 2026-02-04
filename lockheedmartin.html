@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lockheed Martin — Aviation Website</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #2c3e50; padding: 15px 20px; z-index: 1000; display:flex; align-items:center; }
+        .hamburger { display:flex; flex-direction:column; cursor:pointer; gap:6px; padding:10px; border-radius:5px; transition: background-color 0.3s ease; }
+        .hamburger:hover { background-color: #555555; }
+        .hamburger span { width:25px; height:3px; background-color:white; display:block; }
+        .dropdown { position:absolute; top:50px; left:20px; background:white; border:1px solid #ddd; border-radius:5px; box-shadow:0 2px 10px rgba(0,0,0,0.2); display:none; min-width:200px; z-index:999; }
+        .dropdown.active { display:block; }
+        .dropdown-item { padding:15px 20px; cursor:pointer; transition:background-color .3s; border-bottom:1px solid #eee; font-weight:500; color:#333; text-decoration:none; display:block; }
+        .dropdown-item:last-child { border-bottom:none; }
+        .dropdown-item:hover { background:#f0f0f0; }
+        .container { margin-top:80px; padding:40px; max-width:1200px; margin-left:auto; margin-right:auto; }
+        .company-page { background:white; padding:40px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+        .company-header { display:flex; align-items:flex-start; gap:30px; margin-bottom:30px; }
+        .company-logo img { width:1in; height:auto; border-radius:5px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+        h1 { color:#2c3e50; font-size:2.5em; margin-bottom:20px; }
+        h2 { color:#2c3e50; margin-top:25px; margin-bottom:15px; font-size:1.6em; }
+        p, li { font-size:1em; margin-bottom:15px; text-align:justify; line-height:1.8; }
+        ul { margin-left:20px; margin-bottom:15px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleDropdown()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="boeing.html">Boeing</a>
+            <a class="dropdown-item" href="lockheedmartin.html">Lockheed Martin</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="company-page">
+            <div class="company-header">
+                <div class="company-logo">
+                    <img src="Lockheed Martin.png" alt="Lockheed Martin Logo">
+                </div>
+                <div>
+                    <h1>Lockheed Martin</h1>
+                    <p><strong>Headquarters:</strong> Bethesda, Maryland, USA</p>
+                    <p><strong>Founded:</strong> 1995 (through merger; origins trace back to 1912)</p>
+                    <p><strong>CEO:</strong> James Taiclet (as of 2023)</p>
+                </div>
+            </div>
+
+            <h2>About Lockheed Martin</h2>
+            <p>Lockheed Martin is a global security and aerospace company with headquarters in Maryland. The company is a leader in the design, development, and manufacture of advanced technology systems and products for the military, space, and commercial customers. Lockheed Martin's legacy stretches back to the early days of aviation and continues to shape the future of aerospace technology.</p>
+
+            <h2>History</h2>
+            <p>Lockheed Martin was formed in 1995 through the merger of Lockheed Corporation and Martin Marietta Corporation. However, the company's roots extend much deeper. Lockheed Aircraft Corporation was founded in 1912 and became famous for producing iconic military aircraft such as the P-38 Lightning during World War II and the SR-71 Blackbird during the Cold War. Martin Marietta, founded in 1961, was already a major player in defense and space technology when the merger occurred.</p>
+
+            <h2>Major Products and Aircraft</h2>
+            <ul>
+                <li><strong>F-35 Lightning II:</strong> A fifth-generation fighter aircraft considered one of the most advanced military jets in the world, used by multiple nations.</li>
+                <li><strong>F-16 Fighting Falcon:</strong> A proven combat fighter aircraft that has been in service since 1978 and remains one of the most widely used fighters globally.</li>
+                <li><strong>C-130 Hercules:</strong> A legendary military transport aircraft known for its reliability and versatility in cargo transport and specialized missions.</li>
+                <li><strong>SR-71 Blackbird:</strong> A legendary reconnaissance aircraft from the Cold War era that remains unmatched in speed and altitude capability.</li>
+            </ul>
+
+            <h2>Business Segments</h2>
+            <p>Lockheed Martin operates through four main segments: Aeronautics, Missiles & Fire Control, Rotary & Mission Systems, and Space. Each segment specializes in different aspects of defense and aerospace technology, from fighter jets to missile systems to space exploration platforms.</p>
+
+            <h2>Space Exploration</h2>
+            <p>In addition to military aircraft, Lockheed Martin plays a crucial role in space exploration. The company has developed advanced space systems including satellites, space launch vehicles, and deep space exploration platforms. Lockheed Martin is heavily involved in NASA programs and commercial space ventures.</p>
+
+            <h2>Global Presence</h2>
+            <p>Lockheed Martin employs approximately 130,000 people worldwide and operates in numerous countries, providing cutting-edge defense and aerospace solutions to government and commercial customers. The company is committed to maintaining technological superiority and supporting global security initiatives.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() { const dropdown = document.getElementById('dropdown'); dropdown.classList.toggle('active'); }
+        document.addEventListener('click', function(event) { const navbar = document.querySelector('.navbar'); const dropdown = document.getElementById('dropdown'); if (!navbar.contains(event.target)) { dropdown.classList.remove('active'); } });
+    </script>
+</body>
+</html>
