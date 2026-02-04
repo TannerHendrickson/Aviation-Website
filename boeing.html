@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boeing — Aviation Website</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #2c3e50; padding: 15px 20px; z-index: 1000; display:flex; align-items:center; }
+        .hamburger { display:flex; flex-direction:column; cursor:pointer; gap:6px; padding:10px; border-radius:5px; transition: background-color 0.3s ease; }
+        .hamburger:hover { background-color: #555555; }
+        .hamburger span { width:25px; height:3px; background-color:white; display:block; }
+        .dropdown { position:absolute; top:50px; left:20px; background:white; border:1px solid #ddd; border-radius:5px; box-shadow:0 2px 10px rgba(0,0,0,0.2); display:none; min-width:200px; z-index:999; }
+        .dropdown.active { display:block; }
+        .dropdown-item { padding:15px 20px; cursor:pointer; transition:background-color .3s; border-bottom:1px solid #eee; font-weight:500; color:#333; text-decoration:none; display:block; }
+        .dropdown-item:last-child { border-bottom:none; }
+        .dropdown-item:hover { background:#f0f0f0; }
+        .container { margin-top:80px; padding:40px; max-width:1200px; margin-left:auto; margin-right:auto; }
+        .company-page { background:white; padding:40px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+        .company-header { display:flex; align-items:flex-start; gap:30px; margin-bottom:30px; }
+        .company-logo img { width:1in; height:auto; border-radius:5px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+        h1 { color:#2c3e50; font-size:2.5em; margin-bottom:20px; }
+        h2 { color:#2c3e50; margin-top:25px; margin-bottom:15px; font-size:1.6em; }
+        p, li { font-size:1em; margin-bottom:15px; text-align:justify; line-height:1.8; }
+        ul { margin-left:20px; margin-bottom:15px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleDropdown()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="boeing.html">Boeing</a>
+            <a class="dropdown-item" href="lockheedmartin.html">Lockheed Martin</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="company-page">
+            <div class="company-header">
+                <div class="company-logo">
+                    <img src="Boeing.png" alt="Boeing Logo">
+                </div>
+                <div>
+                    <h1>Boeing</h1>
+                    <p><strong>Headquarters:</strong> Chicago, Illinois, USA</p>
+                    <p><strong>Founded:</strong> 1916</p>
+                    <p><strong>CEO:</strong> Kelly Ortberg (as of 2024)</p>
+                </div>
+            </div>
+
+            <h2>About Boeing</h2>
+            <p>The Boeing Company is one of the world's largest aerospace and defense organizations. Boeing is known for building commercial aircraft, defense systems, and space exploration technology. With over a century of innovation, Boeing has established itself as a leader in the aviation industry, serving airlines and governments worldwide.</p>
+
+            <h2>History</h2>
+            <p>Founded by William E. Boeing in 1916, the company started as Pacific Aero Products Company and later became Boeing Airplane Company. The company's early success came with the production of mail planes and military aircraft. However, Boeing truly revolutionized commercial aviation with the introduction of the Boeing 707 in 1958, the first commercial jet airliner to enter service. This aircraft transformed international travel and set the standard for future commercial aircraft.</p>
+
+            <h2>Major Aircraft</h2>
+            <ul>
+                <li><strong>Boeing 747:</strong> The iconic "Queen of the Skies," introduced in 1970, revolutionized long-distance travel with its double-deck design and massive capacity.</li>
+                <li><strong>Boeing 777:</strong> A widely used twin-engine wide-body jet known for its reliability and efficiency in long-distance flights.</li>
+                <li><strong>Boeing 787 Dreamliner:</strong> A state-of-the-art aircraft featuring advanced composite materials, improved fuel efficiency, and enhanced passenger comfort.</li>
+                <li><strong>Boeing 737:</strong> The world's best-selling commercial jetliner, used by airlines globally for short to medium-range flights.</li>
+            </ul>
+
+            <h2>Business Divisions</h2>
+            <p>Boeing operates through several divisions including Commercial Airplanes, Defense Space & Security, and Boeing Capital. Each division contributes significantly to the company's revenue and innovation in their respective fields.</p>
+
+            <h2>Innovation and Sustainability</h2>
+            <p>Boeing continues to invest in advanced technologies, including the development of more fuel-efficient engines, sustainable aviation fuels, and advanced manufacturing techniques. The company is committed to reducing carbon emissions and developing environmentally responsible aviation solutions.</p>
+
+            <h2>Global Impact</h2>
+            <p>Boeing operates in over 150 countries and employs tens of thousands of people worldwide. The company's aircraft connect people across the globe, supporting billions of passengers annually and contributing trillions of dollars to the global economy.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() { const dropdown = document.getElementById('dropdown'); dropdown.classList.toggle('active'); }
+        document.addEventListener('click', function(event) { const navbar = document.querySelector('.navbar'); const dropdown = document.getElementById('dropdown'); if (!navbar.contains(event.target)) { dropdown.classList.remove('active'); } });
+    </script>
+</body>
+</html>
