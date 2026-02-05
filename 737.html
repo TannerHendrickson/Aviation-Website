@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boeing 737 Seat Map — Aviation Website</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        .navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #2c3e50; padding: 15px 20px; z-index: 1000; display:flex; align-items:center; }
+        .hamburger { display:flex; flex-direction:column; cursor:pointer; gap:6px; padding:10px; border-radius:5px; transition: background-color 0.3s ease; }
+        .hamburger:hover { background-color: #555555; }
+        .hamburger span { width:25px; height:3px; background-color:white; display:block; }
+        .dropdown { position:absolute; top:50px; left:20px; background:white; border:1px solid #ddd; border-radius:5px; box-shadow:0 2px 10px rgba(0,0,0,0.2); display:none; min-width:200px; z-index:999; }
+        .dropdown.active { display:block; }
+        .dropdown-item { padding:15px 20px; cursor:pointer; transition:background-color .3s; border-bottom:1px solid #eee; font-weight:500; color:#333; text-decoration:none; display:block; }
+        .dropdown-item:last-child { border-bottom:none; }
+        .dropdown-item:hover { background:#f0f0f0; }
+        .container { margin-top:80px; padding:40px; max-width:1200px; margin-left:auto; margin-right:auto; }
+        .aircraft-page { background:white; padding:40px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+        h1 { color:#2c3e50; font-size:2.5em; margin-bottom:20px; }
+        .seat-map-container { text-align:center; margin-top:30px; }
+        .seat-map-container img { max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="hamburger" onclick="toggleDropdown()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="dropdown" id="dropdown">
+            <a class="dropdown-item" href="index.html">Home</a>
+            <a class="dropdown-item" href="boeing.html">Boeing</a>
+            <a class="dropdown-item" href="lockheedmartin.html">Lockheed Martin</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="aircraft-page">
+            <h1>Boeing 737 - Seat Map</h1>
+            <div class="seat-map-container">
+                <img src="737.webp" alt="Boeing 737 Seat Map">
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleDropdown() { const dropdown = document.getElementById('dropdown'); dropdown.classList.toggle('active'); }
+        document.addEventListener('click', function(event) { const navbar = document.querySelector('.navbar'); const dropdown = document.getElementById('dropdown'); if (!navbar.contains(event.target)) { dropdown.classList.remove('active'); } });
+    </script>
+</body>
+</html>
