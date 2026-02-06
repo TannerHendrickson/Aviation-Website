@@ -29,6 +29,33 @@
             z-index: 1000;
             display: flex;
             align-items: center;
+            gap: 10px;
+        }
+
+        .nav-arrows {
+            display: flex;
+            gap: 10px;
+        }
+
+        .nav-btn {
+            background-color: #555555;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            background-color: #777777;
+        }
+
+        .nav-btn:disabled {
+            background-color: #999999;
+            cursor: not-allowed;
+            opacity: 0.6;
         }
 
         .hamburger {
@@ -56,7 +83,7 @@
         .dropdown {
             position: absolute;
             top: 50px;
-            left: 20px;
+            left: 100px;
             background-color: white;
             border: 1px solid #ddd;
             border-radius: 5px;
@@ -132,6 +159,8 @@
             <a class="dropdown-item" href="index.html">Home</a>
             <a class="dropdown-item" href="boeing.html">Boeing</a>
             <a class="dropdown-item" href="lockheedmartin.html">Lockheed Martin</a>
+            <a class="dropdown-item" href="airbus.html">Airbus</a>
+            <a class="dropdown-item" href="links.html">Links</a>
         </div>
     </nav>
 
@@ -173,6 +202,11 @@
                 dropdown.classList.remove('active');
             }
         });
+
+        function goBack() { window.history.back(); }
+        function goForward() { window.history.forward(); }
+        function updateNavButtons() { document.getElementById('backBtn').disabled = !window.history.length; }
+        window.addEventListener('load', updateNavButtons);
     </script>
 </body>
 </html>

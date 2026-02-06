@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boeing 747 Seat Map — Aviation Website</title>
+    <title>A350 XWB Seat Map — Aviation Website</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
@@ -49,31 +49,20 @@
 
     <div class="container">
         <div class="aircraft-page">
-            <h1>Boeing 747 - Seat Map</h1>
+            <h1>A350 XWB Seat Map</h1>
             <div class="seat-map-container">
-                <img src="747.jpg" alt="Boeing 747 Seat Map">
+                <img src="350.png" alt="A350 XWB Seat Map">
             </div>
         </div>
     </div>
 
     <script>
-        function toggleDropdown() { 
-            const dropdown = document.getElementById('dropdown'); 
-            dropdown.classList.toggle('active'); 
-        }
-        function goBack() { 
-            window.history.back(); 
-        }
-        function goForward() { 
-            window.history.forward(); 
-        }
-        document.addEventListener('click', function(event) { 
-            const navbar = document.querySelector('.navbar'); 
-            const dropdown = document.getElementById('dropdown'); 
-            if (!navbar.contains(event.target)) { 
-                dropdown.classList.remove('active'); 
-            } 
-        });
+        function toggleDropdown() { const dropdown = document.getElementById('dropdown'); dropdown.classList.toggle('active'); }
+        function goBack() { window.history.back(); }
+        function goForward() { window.history.forward(); }
+        function updateNavButtons() { document.getElementById('backBtn').disabled = !window.history.length; }
+        document.addEventListener('click', function(event) { const navbar = document.querySelector('.navbar'); const dropdown = document.getElementById('dropdown'); if (!navbar.contains(event.target)) { dropdown.classList.remove('active'); } });
+        window.addEventListener('load', updateNavButtons);
     </script>
 </body>
 </html>

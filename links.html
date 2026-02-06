@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boeing 737 Seat Map — Aviation Website</title>
+    <title>Links — Aviation Website</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Arial', sans-serif; line-height: 1.6; color: #333; background-color: #f4f4f4; }
@@ -21,10 +21,15 @@
         .dropdown-item:last-child { border-bottom:none; }
         .dropdown-item:hover { background:#f0f0f0; }
         .container { margin-top:80px; padding:40px; max-width:1200px; margin-left:auto; margin-right:auto; }
-        .aircraft-page { background:white; padding:40px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
-        h1 { color:#2c3e50; font-size:2.5em; margin-bottom:20px; }
-        .seat-map-container { text-align:center; margin-top:30px; }
-        .seat-map-container img { max-width:100%; height:auto; border-radius:8px; box-shadow:0 2px 8px rgba(0,0,0,0.15); }
+        .links-page { background:white; padding:40px; border-radius:8px; box-shadow:0 0 10px rgba(0,0,0,0.1); }
+        h1 { color:#2c3e50; font-size:2.5em; margin-bottom:30px; }
+        h2 { color:#2c3e50; margin-top:25px; margin-bottom:15px; font-size:1.6em; }
+        p { font-size:1em; margin-bottom:15px; text-align:justify; line-height:1.8; }
+        .links-list { list-style: none; margin-left: 0; }
+        .links-list li { margin-bottom: 20px; padding: 15px; background-color: #f9f9f9; border-left: 4px solid #2c3e50; border-radius: 5px; }
+        .links-list a { color: #333; font-weight: 500; font-size: 1.1em; text-decoration: none; display: block; margin-bottom: 5px; }
+        .links-list a:hover { text-decoration: underline; }
+        .links-list span { color: #666; font-size: 0.9em; display: block; }
     </style>
 </head>
 <body>
@@ -48,11 +53,37 @@
     </nav>
 
     <div class="container">
-        <div class="aircraft-page">
-            <h1>Boeing 737 - Seat Map</h1>
-            <div class="seat-map-container">
-                <img src="737.webp" alt="Boeing 737 Seat Map">
-            </div>
+        <div class="links-page">
+            <h1>Useful Links</h1>
+            <p>Below are links to the official websites of the major aerospace and defense companies featured on this site.</p>
+
+            <h2>Company Websites</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://www.airbus.com/en" target="_blank">Airbus</a>
+                    <span>The official website of Airbus, a leading aircraft manufacturer based in Toulouse, France.</span>
+                </li>
+                <li>
+                    <a href="https://www.boeing.com/" target="_blank">Boeing</a>
+                    <span>The official website of The Boeing Company, a major aerospace and defense organization based in Chicago, USA.</span>
+                </li>
+                <li>
+                    <a href="https://www.lockheedmartin.com/" target="_blank">Lockheed Martin</a>
+                    <span>The official website of Lockheed Martin, a global security and aerospace company based in Maryland, USA.</span>
+                </li>
+            </ul>
+
+            <h2>Games</h2>
+            <ul class="links-list">
+                <li>
+                    <a href="https://www.geo-fs.com" target="_blank">Geo FS</a>
+                    <span>A free browser-based flight simulator that allows you to fly over the real world using Google Maps.</span>
+                </li>
+                <li>
+                    <a href="https://warthunder.com/en/play4free?r=bing_111024980_1759104347__kwd-76210002874112:loc-32&placement=&msclkid=c02262e72be91aec64650b6252690ec7#/" target="_blank">War Thunder</a>
+                    <span>A free-to-play military aviation game featuring hundreds of realistic aircraft and vehicles.</span>
+                </li>
+            </ul>
         </div>
     </div>
 
